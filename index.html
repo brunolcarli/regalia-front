@@ -9,7 +9,7 @@
     </head>
     <body>
         
-        <canvas id="chart" width="400" height="400"></canvas>
+        <canvas id="chart" width="500" height="500"></canvas>
         <script>
             let scatter_data = [];
             api_data.then(function (r){
@@ -42,7 +42,9 @@
                     borderWidth: 1
                   }]
                 },
-                options: {}
+                options: {
+                  responsive: false
+                }
               });
      
             });
