@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/requests.js"></script>
+        <script>
+          var api_data = query_api();
+        </script>
+    </head>
+    <body>
+        
+        <canvas id="chart" width="400" height="400"></canvas>
+        <script>
+            let scatter_data = [];
+            api_data.then(function (r){
+              api_data = r;
+              }).then(function (){
+                for (let i in api_data) {
+                for (let j in api_data[i]){
+                  scatter_data.push({
+                    'x': api_data[i][j]['year'],
+                    'y': api_data[i][j]['price']
+                  });
+                }
+              };
+            }).then(function () {
+
+              const ctx = document.getElementById('chart').getContext('2d');
+              const chart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                  labels: ['red', 'green', 'blue'],
+                  datasets: [{
+                    label: 'Preço por ano do veículo',
+                    data: scatter_data,
+                    backgroundColor: [
+                      'red',
+                    ],
+                    borderColor: [
+                      'blue'
+                    ],
+                    borderWidth: 1
+                  }]
+                },
+                options: {}
+              });
+     
+            });
+
+          </script>
+    </body>
+</html>
