@@ -21,6 +21,13 @@
     <script src="js/requests.js"></script>
     <script src="js/resolvers.js"></script>
     <script src="js/plots.js"></script>
+    
+    <!-- css -->
+    <style>
+      canvas{
+        margin: 0 auto;
+        }
+    </style>
 
     <title>BMW 320i OLX PR/CWB analytics!</title>
   </head>
@@ -36,27 +43,27 @@
     <p style="text-align:center;">Análise aplicada sobre modelos BMW320i</p>
     <p style="text-align:center;">Busca realizada para o Estado do Paraná/PR - Curitiba e região</p>
     <hr />
-
+    
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <canvas id="PricePerCarYearChart" width="500" height="500"></canvas>
+          <canvas id="PricePerCarYearChart" width="800" height="600"></canvas>
           <script>plot_price_per_carYear()</script>
         </div>
         <div class="carousel-item">
-          <canvas id="KmPerCarYearChart" width="500" height="500"></canvas>
+          <canvas id="KmPerCarYearChart" width="800" height="600"></canvas>
           <script>plot_km_per_carYear()</script>
         </div>
         <div class="carousel-item">
-          <canvas id="PricePerKmChart" width="500" height="500"></canvas>
+          <canvas id="PricePerKmChart" width="800" height="600"></canvas>
           <script>plot_price_per_km()</script>
         </div>
         <div class="carousel-item">
-          <canvas id="CarYearChart" width="500" height="500"></canvas>
+          <canvas id="CarYearChart" width="800" height="600"></canvas>
           <script>plot_car_year()</script>
         </div>
         <div class="carousel-item">
-          <canvas id="AvgCarYearPriceChart" width="500" height="500"></canvas>
+          <canvas id="AvgCarYearPriceChart" width="800" height="600"></canvas>
           <script>plot_average_car_year_price()</script>
         </div>
       </div>
@@ -74,6 +81,5 @@
     <div class="alert alert-primary" role="alert">
       <p style="text-align:center;">! Deslize para direita e esquerda para trocar os gráficos !</p>
     </div>
-
   </body>
 </html>

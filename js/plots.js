@@ -19,7 +19,7 @@ function plot_price_per_carYear(){
                 }]
             },
             options: {
-                responsive: true
+                responsive: false
             }
         });
         return chart;
@@ -47,7 +47,7 @@ function plot_km_per_carYear(){
                 }]
             },
             options: {
-                responsive: true
+                responsive: false
             }
         });
         return chart;
@@ -74,7 +74,7 @@ function plot_price_per_km(){
                 }]
             },
             options: {
-                responsive: true
+                responsive: false
             }
         });
         return chart;
@@ -120,7 +120,7 @@ function plot_car_year(){
                 }]
             },
             options: {
-                responsive: true
+                responsive: false
             }
         });
         return chart;
@@ -170,7 +170,7 @@ function plot_average_car_year_price(){
                 }]
             },
             options: {
-                responsive: true
+                responsive: false
             }
         });
         return chart;
