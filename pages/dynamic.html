@@ -21,6 +21,7 @@
     <script src="../js/requests.js"></script>
     <script src="../js/resolvers.js"></script>
     <script src="../js/plots.js"></script>
+    <script src="../js/util.js"></script>
     
     <!-- css -->
     <style>
@@ -64,24 +65,24 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <canvas id="PricePerCarYearChart" width="400" height="500"></canvas>
-          <script>plot_price_per_carYear()</script>
+          <canvas id="PricePerCarYearChart" width="350" height="400"></canvas>
+          <script>plot_price_per_carYear("PricePerCarYearChart")</script>
         </div>
         <div class="carousel-item">
-          <canvas id="KmPerCarYearChart" width="400" height="500"></canvas>
-          <script>plot_km_per_carYear()</script>
+          <canvas id="KmPerCarYearChart" width="350" height="400"></canvas>
+          <script>plot_km_per_carYear("KmPerCarYearChart")</script>
         </div>
         <div class="carousel-item">
-          <canvas id="PricePerKmChart" width="400" height="500"></canvas>
-          <script>plot_price_per_km()</script>
+          <canvas id="PricePerKmChart" width="350" height="400"></canvas>
+          <script>plot_price_per_km("PricePerKmChart")</script>
         </div>
         <div class="carousel-item">
-          <canvas id="CarYearChart" width="400" height="500"></canvas>
-          <script>plot_car_year()</script>
+          <canvas id="CarYearChart" width="350" height="400"></canvas>
+          <script>plot_car_year("CarYearChart")</script>
         </div>
         <div class="carousel-item">
-          <canvas id="AvgCarYearPriceChart" width="400" height="500"></canvas>
-          <script>plot_average_car_year_price()</script>
+          <canvas id="AvgCarYearPriceChart" width="350" height="400"></canvas>
+          <script>plot_average_car_year_price("AvgCarYearPriceChart")</script>
         </div>
       </div>
 
@@ -96,7 +97,27 @@
     </div>
 
     <div class="alert alert-primary" role="alert">
-      <p style="text-align:center;">! Deslize para direita e esquerda para trocar os gráficos !</p>
+      <p style="text-align:center;">! Direita e esquerda para trocar os gráficos !</p>
+      <p style="text-align:center;">! Ou selecione um gráfico específico abaixo !</p>
     </div>
+
+    <hr />
+
+    <h3 style="text-align:center;">Seleção de gráfico</h3>
+    <div style="text-align:center;">
+      <label for="chart_selection">Selecionar gráfico:</label>
+      <select name="chart_selection" id="chart_selection" onchange="update_dynamic_chart(this.value)">
+        <option value="PRICEXYEAR">Preço por Ano</option>
+        <option value="KMXYEAR">Km por Ano</option>
+        <option value="PRICEXKM">Preço por Km</option>
+        <option value="YEAR">Ofertas por ano do veículo</option>
+        <option value="AVGYEARPRICE">Média de preço por ano do veículo</option>
+      </select>
+    </div>
+
+    <div id="dynamic_chart">
+      <canvas id="DynamicChart" width="350" height="400"></canvas>
+    </div>
+
   </body>
 </html>

@@ -1,7 +1,7 @@
 
-function plot_price_per_carYear(){
+function plot_price_per_carYear(chart_id){
     return resolve_price_per_carYear().then(dataset => {
-        const ctx = document.getElementById('PricePerCarYearChart').getContext('2d');
+        const ctx = document.getElementById(chart_id).getContext('2d');
         const chart = new Chart(ctx, {
             type: 'scatter',
             data: {
@@ -27,9 +27,9 @@ function plot_price_per_carYear(){
 }
 
 
-function plot_km_per_carYear(){
+function plot_km_per_carYear(chart_id){
     return resolve_km_per_carYear().then(dataset => {
-        const ctx = document.getElementById('KmPerCarYearChart').getContext('2d');
+        const ctx = document.getElementById(chart_id).getContext('2d');
         const chart = new Chart(ctx, {
             type: 'scatter',
             data: {
@@ -54,9 +54,9 @@ function plot_km_per_carYear(){
     });
 }
 
-function plot_price_per_km(){
+function plot_price_per_km(chart_id){
     return resolve_price_per_km().then(dataset => {
-        const ctx = document.getElementById('PricePerKmChart').getContext('2d');
+        const ctx = document.getElementById(chart_id).getContext('2d');
         const chart = new Chart(ctx, {
             type: 'scatter',
             data: {
@@ -81,9 +81,9 @@ function plot_price_per_km(){
     });
 }
 
-function plot_car_year(){
+function plot_car_year(chart_id){
     return resolve_car_year().then(dataset => {
-        const ctx = document.getElementById('CarYearChart').getContext('2d');
+        const ctx = document.getElementById(chart_id).getContext('2d');
 
         let labels = [];
         let values = [];
@@ -127,9 +127,9 @@ function plot_car_year(){
     });
 }
 
-function plot_average_car_year_price(){
+function plot_average_car_year_price(chart_id){
     return resolve_average_car_year_price().then(dataset => {
-        const ctx = document.getElementById('AvgCarYearPriceChart').getContext('2d');
+        const ctx = document.getElementById(chart_id).getContext('2d');
 
         let labels = [];
         let values = [];
