@@ -75,3 +75,22 @@ function resolve_average_car_year_price(){
         return dataset;
     });
 }
+
+function resolve_bmw_offers(){
+    return get_bmw_offers().then(data => {
+        let dataset = [];
+        for (let i in data) {
+            let row = [
+                data[i]['price'],
+                data[i]['carYear'],
+                data[i]['km'],
+                data[i]['power'],
+                data[i]['color'],
+                data[i]['carModel'],
+                data[i]['url']
+            ];
+            dataset.push(row);
+        };
+        return dataset;
+    });
+}
