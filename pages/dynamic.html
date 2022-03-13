@@ -7,12 +7,25 @@
   ###################################
   -->
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Chart js -->
@@ -22,25 +35,35 @@
     <script src="../js/resolvers.js"></script>
     <script src="../js/plots.js"></script>
     <script src="../js/util.js"></script>
-    
+
     <!-- css -->
     <style>
-      canvas{
+      canvas {
         margin: 0 auto;
-        }
+      }
     </style>
 
     <title>BMW 320i OLX PR/CWB analytics!</title>
   </head>
-  <body style="background-color:rgba(204, 200, 200, 0.466);">
+  <body style="background-color: rgba(204, 200, 200, 0.466)">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="../index.html">Início<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html"
+            >Início<span class="sr-only">(current)</span></a
+          >
           <a class="nav-link" href="report.html">Relatório</a>
           <a class="nav-link active" href="dynamic.html">Dinâmico</a>
           <a class="nav-link" href="about.html">Sobre</a>
@@ -57,56 +80,90 @@
     </nav>
 
     <!-- title -->
-    <h3 style="text-align:center;">Análise de ofertas de BMW na OLX</h3>
-    <p style="text-align:center;">Análise aplicada sobre modelos BMW320i</p>
-    <p style="text-align:center;">Busca realizada para o Estado do Paraná/PR - Curitiba e região</p>
+    <h3 style="text-align: center">Análise de ofertas de BMW na OLX</h3>
+    <p style="text-align: center">Análise aplicada sobre modelos BMW320i</p>
+    <p style="text-align: center">
+      Busca realizada para o Estado do Paraná/PR - Curitiba e região
+    </p>
     <hr />
-    
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+
+    <div
+      id="carouselExampleFade"
+      class="carousel slide carousel-fade"
+      data-ride="carousel"
+    >
       <div class="carousel-inner">
         <div class="carousel-item active">
           <canvas id="PricePerCarYearChart" width="350" height="400"></canvas>
-          <script>plot_price_per_carYear("PricePerCarYearChart")</script>
+          <script>
+            plot_price_per_carYear("PricePerCarYearChart");
+          </script>
         </div>
         <div class="carousel-item">
           <canvas id="KmPerCarYearChart" width="350" height="400"></canvas>
-          <script>plot_km_per_carYear("KmPerCarYearChart")</script>
+          <script>
+            plot_km_per_carYear("KmPerCarYearChart");
+          </script>
         </div>
         <div class="carousel-item">
           <canvas id="PricePerKmChart" width="350" height="400"></canvas>
-          <script>plot_price_per_km("PricePerKmChart")</script>
+          <script>
+            plot_price_per_km("PricePerKmChart");
+          </script>
         </div>
         <div class="carousel-item">
           <canvas id="CarYearChart" width="350" height="400"></canvas>
-          <script>plot_car_year("CarYearChart")</script>
+          <script>
+            plot_car_year("CarYearChart");
+          </script>
         </div>
         <div class="carousel-item">
           <canvas id="AvgCarYearPriceChart" width="350" height="400"></canvas>
-          <script>plot_average_car_year_price("AvgCarYearPriceChart")</script>
+          <script>
+            plot_average_car_year_price("AvgCarYearPriceChart");
+          </script>
         </div>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-target="#carouselExampleFade"
+        data-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-target="#carouselExampleFade"
+        data-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </button>
     </div>
 
     <div class="alert alert-primary" role="alert">
-      <p style="text-align:center;">! Direita e esquerda para trocar os gráficos !</p>
-      <p style="text-align:center;">! Ou selecione um gráfico específico abaixo !</p>
+      <p style="text-align: center">
+        ! Direita e esquerda para trocar os gráficos !
+      </p>
+      <p style="text-align: center">
+        ! Ou selecione um gráfico específico abaixo !
+      </p>
     </div>
 
     <hr />
 
-    <h3 style="text-align:center;">Seleção de gráfico</h3>
-    <div style="text-align:center;">
+    <h3 style="text-align: center">Seleção de gráfico</h3>
+    <div style="text-align: center">
       <label for="chart_selection">Selecionar gráfico:</label>
-      <select name="chart_selection" id="chart_selection" onchange="update_dynamic_chart(this.value)">
+      <select
+        name="chart_selection"
+        id="chart_selection"
+        onchange="update_dynamic_chart(this.value)"
+      >
         <option value="PRICEXYEAR">Preço por Ano</option>
         <option value="KMXYEAR">Km por Ano</option>
         <option value="PRICEXKM">Preço por Km</option>
@@ -118,6 +175,5 @@
     <div id="dynamic_chart">
       <canvas id="DynamicChart" width="350" height="400"></canvas>
     </div>
-
   </body>
 </html>

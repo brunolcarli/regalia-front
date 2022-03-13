@@ -7,12 +7,25 @@
   ###################################
   -->
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Chart js -->
@@ -21,25 +34,39 @@
     <script src="js/requests.js"></script>
     <script src="js/resolvers.js"></script>
     <script src="js/plots.js"></script>
-    
+
     <!-- css -->
     <style>
-      canvas{
+      canvas {
         margin: 0 auto;
+      }
+      * {
+        margin: 0;
+        padding: 0;
       }
     </style>
 
     <title>BMW 320i OLX PR/CWB analytics!</title>
   </head>
-  <body style="background-color:rgba(204, 200, 200, 0.466);">
+  <body style="background-color: rgba(204, 200, 200, 0.466)">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" href="index.html">Início<span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="index.html"
+            >Início<span class="sr-only">(current)</span></a
+          >
           <a class="nav-link" href="pages/report.html">Relatório</a>
           <a class="nav-link" href="pages/dynamic.html">Dinâmico</a>
           <a class="nav-link" href="pages/about.html">Sobre</a>
@@ -48,37 +75,52 @@
     </nav>
 
     <!-- title -->
-    <h3 style="text-align:center;">Análise de ofertas de BMW na OLX</h3>
-    <p style="text-align:center;">Análise aplicada sobre modelos BMW320i</p>
-    <p style="text-align:center;">Busca realizada para o Estado do Paraná/PR - Curitiba e região</p>
-    <hr />
-    
-    <div class="jumbotron">
+    <section class="bg-dark py-4">
+      <h3 class="text-light" style="text-align: center; margin-bottom: 0">
+        Análise de ofertas de BMW na OLX
+      </h3>
+      <p class="text-light" style="text-align: center">
+        Análise aplicada sobre modelos BMW320i
+      </p>
+      <p class="text-light" style="text-align: center">
+        Busca realizada para o Estado do Paraná/PR - Curitiba e região
+      </p>
+      <hr class="m-0" />
+    </section>
+
+    <section
+      class="jumbotron bg-dark text-light py-4 m-0"
+      style="border-radius: 0"
+    >
       <h4 class="display-4">Olá navegante...</h4>
       <p class="lead">
-        ...esta página é dedicada à exibição de dados coletados, processados e agrupados
-        a partir de anúncios públicos de oferta de venda de veículos a marca BMW na plataforma OLX,
-        mais especificamente veículos do modelo 320i da série 3 da BMW. A coleta é afunilada para
-        anúncios brasileiros do Estado do Paraná/PR na região da Cidade de Curitiba e região.
+        ...esta página é dedicada à exibição de dados coletados, processados e
+        agrupados a partir de anúncios públicos de oferta de venda de veículos a
+        marca BMW na plataforma OLX, mais especificamente veículos do modelo
+        320i da série 3 da BMW. A coleta é afunilada para anúncios brasileiros
+        do Estado do Paraná/PR na região da Cidade de Curitiba e região.
       </p>
-      <hr class="my-4">
+      <hr class="my-4" />
       <p>
-        O objetivo da coleta e exibição destes dados é a comparação e acompanhamento do valor de mercado
-        dos veículos da marca acima citada, proporcionando uma visualização mais ampla dos ativos ofertados,
-        facilitando a tomada de decisão no momento da aquisição ou plano de aquisição do automóvel.
+        O objetivo da coleta e exibição destes dados é a comparação e
+        acompanhamento do valor de mercado dos veículos da marca acima citada,
+        proporcionando uma visualização mais ampla dos ativos ofertados,
+        facilitando a tomada de decisão no momento da aquisição ou plano de
+        aquisição do automóvel.
       </p>
       <p>
-        A aplicação abre portas para algoritmos de aprendizado para buscas da melhor opção possível
-        de oferta
-        para o budget disponível, como recomendar ou inferir um exemplo de características tal como
-        ano e rodagem
-        para um determinado valor de investimento, ou ainda, o valor de investimento necessário para aquisição de
-        um veículo cujas características sejam previamente determidas, tal como a cor, o ano, rodagem máxima, potência,
-        etc.
+        A aplicação abre portas para algoritmos de aprendizado para buscas da
+        melhor opção possível de oferta para o budget disponível, como
+        recomendar ou inferir um exemplo de características tal como ano e
+        rodagem para um determinado valor de investimento, ou ainda, o valor de
+        investimento necessário para aquisição de um veículo cujas
+        características sejam previamente determinadas, tal como a cor, o ano,
+        rodagem máxima, potência, etc.
       </p>
-      <div class="alert alert-primary" role="alert">
-          Use o menu superior para navegar entre as páginas que disponibilizam relatórios e gráficos!
+      <div class="alert alert-dark" role="alert">
+        Use o menu superior para navegar entre as páginas que disponibilizam
+        relatórios e gráficos!
       </div>
-    </div>
+    </section>
   </body>
 </html>
