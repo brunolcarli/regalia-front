@@ -176,3 +176,41 @@ function plot_average_car_year_price(chart_id){
         return chart;
     });
 }
+
+
+function plot_average_gas_price(chart_id){
+    return resolve_avg_gas_prices().then(dataset => {
+        const ctx = document.getElementById(chart_id).getContext('2d');
+        pinhais = dataset['pinhais']
+        cwb = dataset['cwb']
+        dates = dataset['dates']
+        console.log(pinhais)
+        const data = {
+            labels: dates,
+            datasets: [
+                {
+                    label: 'Pinhais',
+                    data: pinhais,
+                    fill: false,
+                    borderColor: 'rgb(175, 92, 99)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Curitiba',
+                    data: cwb,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }
+            ]
+          };
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: false
+            }
+        });
+        return chart
+    })
+}
