@@ -94,3 +94,24 @@ function resolve_bmw_offers(){
         return dataset;
     });
 }
+
+
+function resolve_avg_gas_prices(){
+    return get_gas_avg_prices().then(data => {
+        pinhais_data = [];
+        cwb_data = [];
+        dates = [];
+
+        for (let i in data) {
+            if (data[i]['region'] == 'Pinhais'){
+                pinhais_data.push(data[i]['gasolineAveragePrice']);
+                dates.push(data[i]['dateReference']);
+            }
+            else if (data[i]['region'] == 'Curitiba'){
+                cwb_data.push(data[i]['gasolineAveragePrice']);
+            }
+        }
+        return {'pinhais': pinhais_data, 'cwb': cwb_data, 'dates': dates};
+
+    })
+}

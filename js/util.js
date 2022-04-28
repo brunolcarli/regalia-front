@@ -26,4 +26,7 @@ function update_dynamic_chart(value){
     else if (value == 'AVGYEARPRICE'){
         plot_average_car_year_price(chart_id);
     }
+    else if (value == 'AVGGASPRICE'){
+        plot_average_gas_price(chart_id);
+    }
 }

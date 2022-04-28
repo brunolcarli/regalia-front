@@ -83,3 +83,23 @@ function get_bmw_offers(){
         console.error(err);
     });
 }
+
+
+function get_gas_avg_prices(){
+
+    return fetch("https://regalia.brunolcarli.repl.co/graphql/?=", {
+        "method": "POST",
+        "headers": {
+            "cookie": "csrftoken=nYl1yuCwFAFc45QkOHBrnF8r9S3yGVUTsV5MuO5CcVpMGz3WggVlHpvOv6Ck54cc",
+            "Content-Type": "application/json"
+        },
+        "body": "{\"query\":\"query{\\n\\tgasPrices{\\n\\t\\tregion\\n\\t\\tgasolineAveragePrice\\n\\t\\tdateReference\\n\\t}\\n}\"}"
+    })
+    .then(json)
+    .then(response => {
+        return response['data']['gasPrices'];
+    })
+    .catch(err => {
+        console.error(err);
+    });
+}
