@@ -78,8 +78,35 @@
       </ol>
     </nav>
 
+    
+    <!-- Filtros -->
+    <div class="input-group flex-nowrap">
+      <!-- Input -->
+      <span class="input-group-text">&#x1F50D</span>  <!-- &#x1F50D is the ASCII code for the search icon emoji -->
+      <input type="number" class="form-control" placeholder="Buscar" id="ReportTableFilterInput" aria-label="Search" aria-describedby="addon-wrapping">
+      <!-- Filter select -->
+      <select class="form-select" aria-label="filter" id="ReportFilterSelection">
+        <option selected>Selecionar filtro</option>
+        <option value="km_Lte">Km menor igual</option>
+        <option value="km_Gte">Km maior igual</option>
+        <option value="carYear">Ano</option>
+        <option value="carYear_Lte">Ano menor igual</option>
+        <option value="carYear_Gte">Ano maior igual</option>
+        <option value="price">Preço</option>
+        <option value="price_Lte">Preço menor igual</option>
+        <option value="price_Gte">Preço maior igual</option>
+      </select>
+      <button type="button" class="btn btn-secondary" onclick="filter_report()">&#x1F50D Filter</button>
+    </div>
+
     <main class="bg-dark pb-4">
-      <table id="ReportTable" class="table table-striped table-dark"></table>
+      <table id="ReportTable" class="table table-striped table-dark">
+        <div class="d-flex justify-content-center" id="Loading">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden"></span>
+          </div>
+        </div>
+      </table>
     </main>
 
     <script>
@@ -112,6 +139,10 @@
                     </tr>`;
         }
         document.getElementById("ReportTable").innerHTML += "</tbody></table>";
+      }).then(pass => {
+        // Remove spinner
+        const spinner = document.getElementById("Loading");
+        spinner.remove();
       });
     </script>
   </body>
