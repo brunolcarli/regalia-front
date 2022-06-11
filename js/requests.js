@@ -12,7 +12,7 @@ function get_price_per_carYear(){
             "cookie": "csrftoken=nYl1yuCwFAFc45QkOHBrnF8r9S3yGVUTsV5MuO5CcVpMGz3WggVlHpvOv6Ck54cc",
             "Content-Type": "application/json"
         },
-        "body": "{\"query\":\"query {\\n\\tbmwOffers{\\n\\t\\tcarYear\\n\\t\\tprice\\n\\t}\\n}\"}"
+        "body": "{\"query\":\"query {\\n\\tbmwOffers(price_Gte: 1){\\n\\t\\tcarYear\\n\\t\\tprice\\n\\t}\\n}\"}"
     })
     .then(json)
     .then(response => {
@@ -32,7 +32,7 @@ function get_km_per_carYear(){
             "cookie": "csrftoken=nYl1yuCwFAFc45QkOHBrnF8r9S3yGVUTsV5MuO5CcVpMGz3WggVlHpvOv6Ck54cc",
             "Content-Type": "application/json"
         },
-        "body": "{\"query\":\"query {\\n\\tbmwOffers{\\n\\t\\tcarYear\\n\\t\\tkm\\n\\t}\\n}\"}"
+        "body": "{\"query\":\"query {\\n\\tbmwOffers(km_Lte: 300000, km_Gte: 1000, price_Gte: 1){\\n\\t\\tcarYear\\n\\t\\tkm\\n\\t}\\n}\"}"
     })
     .then(json)
     .then(response => {
@@ -52,7 +52,7 @@ function get_price_per_km(){
             "cookie": "csrftoken=nYl1yuCwFAFc45QkOHBrnF8r9S3yGVUTsV5MuO5CcVpMGz3WggVlHpvOv6Ck54cc",
             "Content-Type": "application/json"
         },
-        "body": "{\"query\":\"query {\\n\\tbmwOffers{\\n\\t\\tprice\\n\\t\\tkm\\n\\t}\\n}\"}"
+        "body": "{\"query\":\"query {\\n\\tbmwOffers(km_Lte: 300000, km_Gte: 1000, price_Gte: 1){\\n\\t\\tprice\\n\\t\\tkm\\n\\t}\\n}\"}"
     })
     .then(json)
     .then(response => {
@@ -73,7 +73,7 @@ function get_bmw_offers(){
             "cookie": "csrftoken=nYl1yuCwFAFc45QkOHBrnF8r9S3yGVUTsV5MuO5CcVpMGz3WggVlHpvOv6Ck54cc",
             "Content-Type": "application/json"
         },
-        "body": "{\"query\":\"query {\\n\\tbmwOffers{\\n\\t\\tprice\\n\\t\\turl\\n\\t\\tcarModel\\n\\t\\tcarYear\\n\\t\\tkm\\n\\t\\tpower\\n\\t\\tcolor\\n\\t\\tsellerName\\n\\t}\\n}\"}"
+        "body": "{\"query\":\"query {\\n\\tbmwOffers(km_Lte: 300000, km_Gte: 1000, price_Gte: 1){\\n\\t\\tprice\\n\\t\\turl\\n\\t\\tcarModel\\n\\t\\tcarYear\\n\\t\\tkm\\n\\t\\tpower\\n\\t\\tcolor\\n\\t\\tsellerName\\n\\t}\\n}\"}"
     })
     .then(json)
     .then(response => {
