@@ -11,6 +11,6 @@
 
 <div align="center">
 
-> [![Version badge](https://img.shields.io/badge/version-0.1.1-silver.svg)]()
+> [![Version badge](https://img.shields.io/badge/version-0.1.2-silver.svg)]()
 
 </div>
